@@ -20,4 +20,5 @@ There are multiple features. This app lets you know:
 - https://www.worldweatheronline.com/ (weather API)
 - https://www.sciencedaily.com/rss/computers_math/artificial_intelligence.xml (A.I. news feed)
 
+
 * deployed to AWS ElasticBeanstalk
