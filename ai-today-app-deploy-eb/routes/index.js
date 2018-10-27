@@ -4,11 +4,11 @@ var express = require('express')
 var router = express.Router();
 var Sentiment = require('sentiment');
 var sentiment = new Sentiment();
-var https = require('https');
+// var https = require('https');
 var request = require('request');
 var fs = require('fs');
-var uc = require('upper-case')
-var capitalize = require('capitalize')
+// var uc = require('upper-case')
+// var capitalize = require('capitalize')
 var lowerCase = require('lower-case')
 
 // Local imports
@@ -179,11 +179,11 @@ var getAverage = function () {
 
   var count = 0;
 
-  years.forEach(function (year, index) {
+  years.forEach( (year, index) => {
 
     var currentUrl = 'https://api.worldweatheronline.com/premium/v1/past-weather.ashx?q=' + encodeURIComponent(currentCity) + '&tp=3&format=json&key=' + apiKey + '&date=' + year + dateString;
     
-    request(currentUrl, function (error, response, body) {
+    request(currentUrl,  (error, response, body) => {
       if (!error && response.statusCode == 200) {
         var result = JSON.parse(body);
 
@@ -230,11 +230,11 @@ var getAverage = function () {
 ////////////////////////
 
 // GET TODAY'S TEMP
-var todaysWeather = function () {
+var todaysWeather = () => {
 
   var currentUrl = 'http://api.worldweatheronline.com/premium/v1/weather.ashx?q=' + encodeURIComponent(currentCity) + '&tp=3&format=json&key=' + apiKey + '&date=' + todaysDate;
 
-  request(currentUrl, function (error, response, body) {
+  request(currentUrl, (error, response, body) => {
     if (!error && response.statusCode == 200) {
       var result = JSON.parse(body);
 
@@ -428,7 +428,7 @@ router.post('/', (req, res, next) => {
     console.log('_averageTemp', _averageTemp);
 
 
-    var checkTimer = setInterval(function () {
+    var checkTimer = setInterval(() => {
 
       if (currentTemp_new != '0' && weatherIcon != '') {
 
@@ -486,18 +486,6 @@ router.post('/', (req, res, next) => {
 
 
 
-
-///////////////////////  HELPER FUNCTION ////////////////////////////////////
-
-// models/user.js
-// var DB = appRequire('config/db');
-// DB.model('User', ...);
-
-// module.exports = function() {
-//   var db = new DatabaseConnection();
-//   // do something to initialize your database settings
-//   return db;
-// }();
 
 
 module.exports = router;
