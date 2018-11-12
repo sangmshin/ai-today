@@ -1,6 +1,8 @@
 # AI TODAY
-- http://ai-today.us-east-1.elasticbeanstalk.com/
 AI Today app is not a simple weather app.
+
+# Launch App
+- http://ai-today.us-east-1.elasticbeanstalk.com/
 
 There are multiple features. This app lets you know:
 1. the most reliable and recent news about A.I.
