@@ -1,4 +1,5 @@
 # AI TODAY
+- http://ai-today.us-east-1.elasticbeanstalk.com/
 AI Today app is not a simple weather app.
 
 There are multiple features. This app lets you know:
